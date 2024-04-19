@@ -18,7 +18,7 @@ const randomFoods = {
 
     randomMessage() {
         const meal = this.randomMeal()
-        const message = `Today you are going to eat ${meal[0]} with a side of ${[meal[1]]} and a extra of ${meal[2]}`;
+        const message = `Today you are going to eat ${meal[0]} with a side of ${meal[1]} and a extra of ${meal[2]}`;
 
         return message
     }
