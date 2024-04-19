@@ -1,39 +1,27 @@
 //Random Recipe Generator
 
 const randomFoods = {
-    'protein': ['Sirlion Beef', 'Mcnuggets', 'Salmon'],
-    'side': ['Ceasar Salad', 'Baked Potatos', 'Rice'],
-    'extra': ['Crispy Onions', 'Oreo Mcflurry', 'One Slide of Tomato'],
+    'protein': ['Sirloin Beef', 'Mcnuggets', 'Salmon', 'Tofu Scramble', 'Cricket Flour Pasta', 'Lentil Soup', 'Black Bean Burger', 'Seitan Steak', 'Tempeh Bacon', 'Quinoa Bowl'],
+    'side': ['Ceasar Salad', 'Baked Potatos', 'Rice', 'Roasted Vegetables', 'Sauteed Greens', 'Fruit Salad', 'Mac and Cheese', 'Sweet Potato Fries', 'Coleslaw', 'Quinoa'],
+    'extra': ['Crispy Onions', 'Oreo Mcflurry', 'One Slide of Tomato', 'Pickles', 'Guacamole', 'Kimchi', 'Sriracha Mayo', 'A Side of Ranch', 'Animal Style Fries', 'Cheese Curds', 'Deep Fried Oreos', 'Beetroot Hummus', 'Edamame'],
     
-    randomFood(typeOfFood) {
-        let food;
-        let randomNumber;
-        switch (typeOfFood) {
-            case 'protein':
-                randomNumber = Math.floor(Math.random() * this.protein.length);
-                food = this.protein[randomNumber].toLocaleLowerCase();
-                break;
-            case 'side':
-                randomNumber = Math.floor(Math.random() * this.side.length);
-                food = this.side[randomNumber].toLocaleLowerCase();
-                break;
-            case 'extra':
-                randomNumber = Math.floor(Math.random() * this.extra.length);
-                food = this.extra[randomNumber].toLocaleLowerCase();
-                break;
-            default:
-                console.log('How you even got here?')
-                break;
-        }
+    randomMeal() {
+        let meal = []
+        const randomProtein = this.protein[Math.floor(Math.random() * this.protein.length)].toLocaleLowerCase();
+        const randomSide = this.side[Math.floor(Math.random() * this.side.length)].toLocaleLowerCase();
+        const randomExtra = this.extra[Math.floor(Math.random() * this.extra.length)].toLocaleLowerCase();
 
-        return food;
+        meal.push(randomProtein, randomSide, randomExtra);
+
+        return meal;
     },
 
     randomMessage() {
-        const message = `Today you are going to eat ${this.randomFood('protein')} with a side of ${this.randomFood('side')} and a extra of ${this.randomFood('extra')}`;
+        const meal = this.randomMeal()
+        const message = `Today you are going to eat ${meal[0]} with a side of ${[meal[1]]} and a extra of ${meal[2]}`;
 
-        console.log(message);
+        return message
     }
 };
 
-randomFoods.randomMessage()
+console.log(randomFoods.randomMessage())
