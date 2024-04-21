@@ -23,7 +23,8 @@ const randomFoods = {
         return message
     }
 };
-const prompt = require('prompt-sync')({sigint: true});
 
+const prompt = require('prompt-sync')({sigint: true});
 const name = prompt('Hi, What\'s your name? ');
+
 console.log(randomFoods.randomMessage(name))
