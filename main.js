@@ -1,9 +1,37 @@
 //Random Recipe Generator
 
 const randomFoods = {
+    on: true,
     'protein': ['Sirloin Beef', 'Mcnuggets', 'Salmon', 'Tofu Scramble', 'Cricket Flour Pasta', 'Lentil Soup', 'Black Bean Burger', 'Seitan Steak', 'Tempeh Bacon', 'Quinoa Bowl'],
     'side': ['Ceasar Salad', 'Baked Potatos', 'Rice', 'Roasted Vegetables', 'Sauteed Greens', 'Fruit Salad', 'Mac and Cheese', 'Sweet Potato Fries', 'Coleslaw', 'Quinoa'],
     'extra': ['Crispy Onions', 'Oreo Mcflurry', 'One Slide of Tomato', 'Pickles', 'Guacamole', 'Kimchi', 'Sriracha Mayo', 'A Side of Ranch', 'Animal Style Fries', 'Cheese Curds', 'Deep Fried Oreos', 'Beetroot Hummus', 'Edamame'],
+
+    start() {
+        let on = true;
+        const prompt = require('prompt-sync')({sigint: true});
+        const name = prompt('Hi, What\'s your name? ');
+
+        do {
+            console.log(this.randomMessage(name));
+            on = prompt('Would you like to see another random recipe? (yes/no)').toLocaleLowerCase();
+
+            const validOptions = ["yes", "y", "no", "n"];
+            count = 0;
+            while (!validOptions.includes(on)) {
+                on = prompt('Please enter a valid option (yes/no)');
+                count++;
+
+                if (count === 3) {
+                    console.log('You enter a wrong option to many times, program is now closing!');
+                    return;
+                }
+            }
+
+            if (on.startsWith('n')) {
+                on = false;
+            }
+        } while (on);
+    },
     
     randomMeal() {
         let meal = []
@@ -24,7 +52,4 @@ const randomFoods = {
     }
 };
 
-const prompt = require('prompt-sync')({sigint: true});
-const name = prompt('Hi, What\'s your name? ');
-
-console.log(randomFoods.randomMessage(name));
+randomFoods.start();
