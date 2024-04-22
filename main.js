@@ -1,7 +1,6 @@
 //Random Recipe Generator
 
 const randomFoods = {
-    on: true,
     'protein': ['Sirloin Beef', 'Mcnuggets', 'Salmon', 'Tofu Scramble', 'Cricket Flour Pasta', 'Lentil Soup', 'Black Bean Burger', 'Seitan Steak', 'Tempeh Bacon', 'Quinoa Bowl'],
     'side': ['Ceasar Salad', 'Baked Potatos', 'Rice', 'Roasted Vegetables', 'Sauteed Greens', 'Fruit Salad', 'Mac and Cheese', 'Sweet Potato Fries', 'Coleslaw', 'Quinoa'],
     'extra': ['Crispy Onions', 'Oreo Mcflurry', 'One Slide of Tomato', 'Pickles', 'Guacamole', 'Kimchi', 'Sriracha Mayo', 'A Side of Ranch', 'Animal Style Fries', 'Cheese Curds', 'Deep Fried Oreos', 'Beetroot Hummus', 'Edamame'],
