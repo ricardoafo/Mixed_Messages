@@ -20,11 +20,11 @@ const randomFoods = {
         const meal = this.randomMeal()
         const message = `${name} today you are going to eat ${meal[0]} with a side of ${meal[1]} and a extra of ${meal[2]}`;
 
-        return message
+        return message;
     }
 };
 
 const prompt = require('prompt-sync')({sigint: true});
 const name = prompt('Hi, What\'s your name? ');
 
-console.log(randomFoods.randomMessage(name))
+console.log(randomFoods.randomMessage(name));
