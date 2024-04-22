@@ -37,4 +37,8 @@ The Random Recipe Generator is a simple JavaScript program that generates random
 
 ## Additional Notes
 - The program validates user input to ensure it conforms to expected options.
+<<<<<<< HEAD
 - If the user enters an invalid option multiple times, the program will exit for better user experience.
+=======
+- If the user enters an invalid option multiple times, the program will exit for better user experience.
+>>>>>>> 2fcf231e9039f6f0fca60be318cb711d23073a27
