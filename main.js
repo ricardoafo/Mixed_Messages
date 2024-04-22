@@ -31,7 +31,7 @@ const randomFoods = {
     },
     
     randomMeal() {
-        let meal = []
+        let meal = [];
         const randomProtein = this.protein[Math.floor(Math.random() * this.protein.length)].toLocaleLowerCase();
         const randomSide = this.side[Math.floor(Math.random() * this.side.length)].toLocaleLowerCase();
         const randomExtra = this.extra[Math.floor(Math.random() * this.extra.length)].toLocaleLowerCase();
